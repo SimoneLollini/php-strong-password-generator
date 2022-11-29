@@ -10,42 +10,7 @@ Dare all’utente anche la possibilità di permettere o meno la ripetizione di c
 <!-- Milestone 4 (BONUS - OPZIONALE)
 Invece di visualizzare la password nella index, effettuare un redirect ad una pagina dedicata che
 tramite $_SESSION (documentazione) recupererà la password da mostrare all’utente. -->
-
-
-<!-- Milestone 1
-
-Una nostra funzione utilizzerà questo dato per generare una password casuale (composta da lettere, lettere maiuscole, numeri e simboli)
-da restituire all’utente. Scriviamo tutto (logica e layout) in un unico file index.php -->
-
-
-<?php
-if (empty($_GET)) {
-    echo 'Compila form';
-} else {
-    // var_dump($_GET['passwordLength']);
-    generatePassword($_GET['passwordLength']);
-}
-function generatePassword($passLength)
-{
-    $newPassword = [];
-    $AlphaNumString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_";
-    // echo 'funzione avviata';
-    for ($i = 0; $i < $passLength; $i++) {
-        $random_numb = random_int(0, 69);
-        // var_dump($random_numb);
-        // echo $AlphaNumString[$random_numb];
-        array_push($newPassword, $AlphaNumString[$random_numb]);
-    }
-    foreach ($newPassword as $chars) {
-        echo $chars;
-    }
-}
-
-
-?>
-
-
-
+<?php include './partials/function.php' ?>
 
 <!doctype html>
 <html lang="en">
