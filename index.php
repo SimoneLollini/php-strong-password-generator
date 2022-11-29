@@ -1,5 +1,4 @@
 <!-- Milestone 3 (BONUS)
-Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli.
 Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme).
 Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali. -->
 
@@ -28,13 +27,13 @@ tramite $_SESSION (documentazione) recupererà la password da mostrare all’ute
         <div class="container">
             <form action="index.php" method="GET">
                 <label for="letter">lettere</label>
-                <input type="checkbox" name="letters" value="letters" id="letters">
+                <input type="checkbox" name="chars_selection[]" value="letters" id="letters">
 
                 <label for="numb">numeri</label>
-                <input type="checkbox" name="numb" value="numb" id="numb">
+                <input type="checkbox" name="chars_selection[]" value="numb" id="numb">
 
                 <label for="special">caratteri speciali</label>
-                <input type="checkbox" name="special" value="special" id="special">
+                <input type="checkbox" name="chars_selection[]" value="specials" id="special">
                 <input name="passwordLength" min="8" max="50" type="number" placeholder="lunghezza password">
                 <button type="submit">Invia</button>
             </form>
