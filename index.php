@@ -1,7 +1,3 @@
-<!-- Milestone 2
-Verificato il corretto funzionamento del nostro codice,
-spostiamo la logica in un file functions.php che includeremo poi nella pagina principale -->
-
 <!-- Milestone 3 (BONUS)
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli.
 Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme).
@@ -29,11 +25,21 @@ tramite $_SESSION (documentazione) recupererà la password da mostrare all’ute
 <body>
 
     <main>
-        <!-- Creare un form che invii in GET la lunghezza della password. -->
-        <form action="index.php" method="GET">
-            <input name="passwordLength" min="8" max="50" type="number" placeholder="lunghezza password">
-            <button type="submit">Invia</button>
-        </form>
+        <div class="container">
+            <form action="index.php" method="GET">
+                <label for="letter">lettere</label>
+                <input type="checkbox" name="letters" value="letters" id="letters">
+
+                <label for="numb">numeri</label>
+                <input type="checkbox" name="numb" value="numb" id="numb">
+
+                <label for="special">caratteri speciali</label>
+                <input type="checkbox" name="special" value="special" id="special">
+                <input name="passwordLength" min="8" max="50" type="number" placeholder="lunghezza password">
+                <button type="submit">Invia</button>
+            </form>
+        </div>
+
     </main>
 
 
